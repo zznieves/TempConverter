@@ -68,16 +68,16 @@ namespace TempConverter_
 
             // which formula do we use? initialTempUnit --> finalTempUnit (6 formulas)
 
-            
+
             // edge-case: both units are the same
-            if(initialTempUnit == finalTempUnit)
+            if (initialTempUnit == finalTempUnit)
             {
                 finalTemp = initialTemp;
             }
             // initialTempUnit is Fahrenheit
             else if (initialTempUnit == 'F')
             {
-                if(finalTempUnit == 'C')
+                if (finalTempUnit == 'C')
                 {
                     // F --> C
                     finalTemp = (initialTemp - 32.0) * (5.0 / 9.0);
@@ -90,9 +90,9 @@ namespace TempConverter_
                 }
             }
             // initialTempUnit is Celsius
-            else if(initialTempUnit == 'C')
+            else if (initialTempUnit == 'C')
             {
-                if(finalTempUnit == 'F')
+                if (finalTempUnit == 'F')
                 {
                     // C --> F
                     finalTemp = (initialTemp * (9.0 / 5.0)) + 32.0;
@@ -106,7 +106,7 @@ namespace TempConverter_
             // initialTempUnit is Kelvin
             else
             {
-                if(finalTempUnit == 'F')
+                if (finalTempUnit == 'F')
                 {
                     // K --> F
                     finalTemp = (initialTemp * (9.0 / 5.0)) - 459.67;

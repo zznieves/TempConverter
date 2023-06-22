@@ -51,7 +51,7 @@
             txtBoxInput.Location = new Point(266, 109);
             txtBoxInput.Name = "txtBoxInput";
             txtBoxInput.Size = new Size(100, 23);
-            txtBoxInput.TabIndex = 1;
+            txtBoxInput.TabIndex = 0;
             txtBoxInput.KeyDown += txtBoxInput_KeyDown;
             // 
             // txtBoxOutput
@@ -61,6 +61,7 @@
             txtBoxOutput.ReadOnly = true;
             txtBoxOutput.Size = new Size(100, 23);
             txtBoxOutput.TabIndex = 2;
+            txtBoxOutput.TabStop = false;
             // 
             // lblOutput
             // 
@@ -76,7 +77,7 @@
             btnSubmit.Location = new Point(330, 167);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(75, 23);
-            btnSubmit.TabIndex = 4;
+            btnSubmit.TabIndex = 3;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
             btnSubmit.Click += btnSubmit_Click;
@@ -88,7 +89,7 @@
             cmbInitialUnit.Location = new Point(372, 109);
             cmbInitialUnit.Name = "cmbInitialUnit";
             cmbInitialUnit.Size = new Size(121, 23);
-            cmbInitialUnit.TabIndex = 5;
+            cmbInitialUnit.TabIndex = 1;
             // 
             // cmbFinalUnit
             // 
@@ -97,7 +98,7 @@
             cmbFinalUnit.Location = new Point(372, 138);
             cmbFinalUnit.Name = "cmbFinalUnit";
             cmbFinalUnit.Size = new Size(121, 23);
-            cmbFinalUnit.TabIndex = 6;
+            cmbFinalUnit.TabIndex = 2;
             // 
             // Form1
             // 
