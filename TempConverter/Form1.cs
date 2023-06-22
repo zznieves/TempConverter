@@ -62,12 +62,9 @@ namespace TempConverter_
             double initialTemp = Double.Parse(input);
             double finalTemp = 0.0;
 
-            // test code: show the initial and final temperature units before conversions
-            MessageBox.Show($"Initial temp unit: {initialTempUnit} Final temp unit: {finalTempUnit}");
 
 
             // which formula do we use? initialTempUnit --> finalTempUnit (6 formulas)
-
 
             // edge-case: both units are the same
             if (initialTempUnit == finalTempUnit)
