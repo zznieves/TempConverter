@@ -79,6 +79,7 @@
             btnSubmit.TabIndex = 4;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // cmbInitialUnit
             // 

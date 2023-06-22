@@ -9,6 +9,9 @@ namespace TempConverter_
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // initialize combo boxes with 1st unit in list
+            cmbInitialUnit.SelectedIndex = 0;
+            cmbFinalUnit.SelectedIndex = 0;
 
         }
 
@@ -43,6 +46,80 @@ namespace TempConverter_
             }
 
 
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // get current input textbox text, initial and final temp units
+            string input = txtBoxInput.Text;
+            char initialTempUnit = cmbInitialUnit.Text[0];
+            char finalTempUnit = cmbFinalUnit.Text[0];
+
+            // ternary operator: if textbox is empty, default value for input is 0
+            input = (input == "") ? ("0") : (input);
+
+            // convert input (string) to a number
+            double initialTemp = Double.Parse(input);
+            double finalTemp = 0.0;
+
+            // test code: show the initial and final temperature units before conversions
+            MessageBox.Show($"Initial temp unit: {initialTempUnit} Final temp unit: {finalTempUnit}");
+
+
+            // which formula do we use? initialTempUnit --> finalTempUnit (6 formulas)
+
+            
+            // edge-case: both units are the same
+            if(initialTempUnit == finalTempUnit)
+            {
+                finalTemp = initialTemp;
+            }
+            // initialTempUnit is Fahrenheit
+            else if (initialTempUnit == 'F')
+            {
+                if(finalTempUnit == 'C')
+                {
+                    // F --> C
+                    finalTemp = (initialTemp - 32.0) * (5.0 / 9.0);
+
+                }
+                else
+                {
+                    // F --> K
+                    finalTemp = (initialTemp + 459.67) * (5.0 / 9.0);
+                }
+            }
+            // initialTempUnit is Celsius
+            else if(initialTempUnit == 'C')
+            {
+                if(finalTempUnit == 'F')
+                {
+                    // C --> F
+                    finalTemp = (initialTemp * (9.0 / 5.0)) + 32.0;
+                }
+                else
+                {
+                    // C --> K
+                    finalTemp = initialTemp + 273.15;
+                }
+            }
+            // initialTempUnit is Kelvin
+            else
+            {
+                if(finalTempUnit == 'F')
+                {
+                    // K --> F
+                    finalTemp = (initialTemp * (9.0 / 5.0)) - 459.67;
+                }
+                else
+                {
+                    // K --> C
+                    finalTemp = initialTemp - 273.15;
+                }
+            }
+
+            // send finalTemp to txtBoxOutput to display to user
+            txtBoxOutput.Text = Math.Round(finalTemp, 2).ToString();
         }
     }
 }
