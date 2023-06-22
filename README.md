@@ -12,6 +12,9 @@ a Windows Form App for converting among the 3 units of temperature; Fahrenheit, 
 
 		b. if the pressed key is a <u>decimal point</u> (but we can only have up
 		to 1 in the entire number)
+		<br>
+
+	![keyDown event-handler validation](./TempConverter/img/tempConverter3.png)
 
 
 2. Processing the input
@@ -21,8 +24,12 @@ a Windows Form App for converting among the 3 units of temperature; Fahrenheit, 
 	unit</u>.
 
 	- this information is used to determine what the proper conversion formula is
+	<br>
+
+	![which formula do we use](./TempConverter/img/tempConverter4.png)
 
 	- result is rounded to 2 decimal places before being displayed in the output 
+	![rounded result](./TempConverter/img/tempConverter2.png)
 
 
 ## Resources
